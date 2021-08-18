@@ -3,6 +3,8 @@ import SbEditable from 'storyblok-react'
 import Teaser from './Teaser'
 import Grid from './Grid'
 import Feature from './Feature'
+import Text from './Text'
+import Media from './Media'
 import Page from './Page'
  
 // resolve Storyblok components to Next.js components
@@ -10,6 +12,8 @@ const Components = {
   'teaser': Teaser,
   'grid': Grid,
   'feature': Feature,
+  'text': Text,
+  'media': Media,
   'page': Page,
 }
  

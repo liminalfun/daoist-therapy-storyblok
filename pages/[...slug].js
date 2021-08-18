@@ -2,7 +2,7 @@ import React from "react";
 import DynamicComponent from "../components/DynamicComponent";
 import Nav from "../components/Nav";
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import { Box, Container, Heading } from "@chakra-ui/react"
 
 import Storyblok, { useStoryblok } from "../lib/storyblok";
 
@@ -12,18 +12,20 @@ export default function Page({ story, preview }) {
 	story = useStoryblok(story, enableBridge);
 
 	return (
-		<div className={styles.container}>
+		<Box>
 			<Head>
 				<title>{story ? story.name : "My Site"}</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Nav />
+			<Container m={8}>
 			<header>
-				<h1>{story ? story.name : "My Site"}</h1>
+				<Heading as="h1">{story ? story.name : "My Site"}</Heading>
 			</header>
 
 			<DynamicComponent blok={story.content} />
-		</div>
+			</Container>
+		</Box>
 	);
 }
 
