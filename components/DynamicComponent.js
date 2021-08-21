@@ -5,6 +5,7 @@ import Grid from './Grid'
 import Feature from './Feature'
 import Text from './Text'
 import Media from './Media'
+import Youtube from './Youtube'
 import Page from './Page'
  
 // resolve Storyblok components to Next.js components
@@ -14,6 +15,7 @@ const Components = {
   'feature': Feature,
   'text': Text,
   'media': Media,
+  'youtube': Youtube,
   'page': Page,
 }
  

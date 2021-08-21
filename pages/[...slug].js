@@ -18,7 +18,7 @@ export default function Page({ story, preview }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Nav />
-			<Container m={8}>
+			<Container maxW="container.lg" p={[4, 8]}>
 			<header>
 				<Heading as="h1">{story ? story.name : "My Site"}</Heading>
 			</header>
