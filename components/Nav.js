@@ -12,41 +12,6 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import Storyblok from "storyblok-js-client";
 
-const Links = ["Ba Zi", "Classes & Instruction", "Online Courses", "About", "Contact"];
-
-const NavLink = ({ children }) => (
-	<Link
-		px={2}
-		py={1}
-		rounded={"md"}
-		_hover={{
-			textDecoration: "none",
-			bg: useColorModeValue("gray.200", "gray.700"),
-		}}
-		href={children}>
-		{children}
-	</Link>
-);
-
-export async function getStaticProps() {
-
-  const res = await fetch(Storyblok.get('cdn/stories'))
-	const stories = await res.json()
- 
-
-  return {
-    props: {
-      stories,
-		}
-  }
-};
-
-const pages = (stories) => (
-	console.log(this)
-);
-
-pages();
-
 export default function Nav() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	return (
@@ -62,9 +27,61 @@ export default function Nav() {
 							as={"nav"}
 							spacing={4}
 							display={{ base: "none", md: "flex" }}>
-							{Links.map((link) => (
-								<NavLink key={link}>{link}</NavLink>
-							))}
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									bg: useColorModeValue("gray.200", "gray.700"),
+								}}
+								href="/ba-zi">
+								Ba Zi
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									bg: useColorModeValue("gray.200", "gray.700"),
+								}}
+								href="/classes-instruction">
+								Classes & Instruction
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									bg: useColorModeValue("gray.200", "gray.700"),
+								}}
+								href="/online-courses">
+								Online Courses
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									bg: useColorModeValue("gray.200", "gray.700"),
+								}}
+								href="/about">
+								About
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									bg: useColorModeValue("gray.200", "gray.700"),
+								}}
+								href="/contact">
+								Contact
+							</Link>
 						</HStack>
 					</HStack>
 					<IconButton
@@ -79,11 +96,61 @@ export default function Nav() {
 				{isOpen ? (
 					<Box pb={4} display={{ md: "none" }}>
 						<Stack as={"nav"} spacing={4}>
-							{Links.map((link) => (
-								<NavLink href={link} key={link}>
-									{link}
-								</NavLink>
-							))}
+						<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									
+								}}
+								href="/ba-zi">
+								Ba Zi
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									
+								}}
+								href="/classes-instruction">
+								Classes & Instruction
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									
+								}}
+								href="/online-courses">
+								Online Courses
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									
+								}}
+								href="/about">
+								About
+							</Link>
+							<Link
+								px={2}
+								py={1}
+								rounded={"md"}
+								_hover={{
+									textDecoration: "none",
+									
+								}}
+								href="/contact">
+								Contact
+							</Link>
 						</Stack>
 					</Box>
 				) : null}
