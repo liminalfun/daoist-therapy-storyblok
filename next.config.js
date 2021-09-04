@@ -1,6 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['a.storyblok.com'],
+    loader: 'custom',
+    domains: ['a.storyblok.com', 'img2.storyblok.com'],
   },
 }

@@ -15,24 +15,35 @@ a {
   box-sizing: border-box;
 }
 
+p {
+  margin-bottom: 1rem !important;
+}
+
 h1 {
   font-size: 2.5rem !important;
-  font-weight: bold !important;
+  margin-bottom: .75rem !important;
 }
 
 h2 {
   font-size: 2rem !important;
+  margin-bottom: .75rem !important;
 }
 
 h3 {
   font-size: 1.5rem !important;
+  margin-bottom: .75rem !important;
 }
 
 h4 {
   font-size: 1.25rem !important;
+  margin-bottom: .75rem !important;
 }
 
 ol, ul {
   margin: revert !important;
   padding: revert !important;
+}
+
+li p {
+  margin-bottom: .75em !important;
 }

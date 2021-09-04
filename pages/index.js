@@ -1,5 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import {
+	Box
+} from "@chakra-ui/react";
 
 // The Storyblok Client & hook
 import Storyblok, { useStoryblok } from "../lib/storyblok";
@@ -11,23 +14,25 @@ export default function Home({ story, preview }) {
 	return (
 		<div>
 			<Head>
-				<title>{story ? story.name : "My Site"}</title>
+				<title>{story ? story.name : ""}</title>
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-
+			
 			<Nav />
+			<Box py="6" px={{base:6, md:16}} maxW="4xl">
 
-			<header>
-				<h1>{story ? story.name : "My Site"}</h1>
-			</header>
+				{/* <header>
+					<h1>{story ? story.name : ""}</h1>
+				</header> */}
 
-			<main className={styles.container}>
-				{story
-					? story.content.body.map((blok) => (
-							<DynamicComponent blok={blok} key={blok._uid} />
-					  ))
-					: null}
-			</main>
+				<main className={styles.container}>
+					{story
+						? story.content.body.map((blok) => (
+								<DynamicComponent blok={blok} key={blok._uid} />
+							))
+						: null}
+				</main>
+			</Box>
 		</div>
 	);
 }

@@ -1,25 +1,18 @@
 import React from "react";
-import { ReactNode } from "react";
 import {
 	Box,
 	Flex,
-	Avatar,
 	HStack,
 	Link,
 	IconButton,
-	Button,
-	Menu,
-	MenuButton,
-	MenuList,
-	MenuItem,
-	MenuDivider,
 	useDisclosure,
 	useColorModeValue,
 	Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Storyblok from "storyblok-js-client";
 
-const Links = ["Clinic", "Instruction", "Online Courses", "About", "Contact"];
+const Links = ["Ba Zi", "Classes & Instruction", "Online Courses", "About", "Contact"];
 
 const NavLink = ({ children }) => (
 	<Link
@@ -30,14 +23,32 @@ const NavLink = ({ children }) => (
 			textDecoration: "none",
 			bg: useColorModeValue("gray.200", "gray.700"),
 		}}
-		href={"#"}>
+		href={children}>
 		{children}
 	</Link>
 );
 
+export async function getStaticProps() {
+
+  const res = await fetch(Storyblok.get('cdn/stories'))
+	const stories = await res.json()
+ 
+
+  return {
+    props: {
+      stories,
+		}
+  }
+};
+
+const pages = (stories) => (
+	console.log(this)
+);
+
+pages();
+
 export default function Nav() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
-
 	return (
 		<nav>
 			<Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
@@ -45,7 +56,7 @@ export default function Nav() {
 					h={16}
 					alignItems={"center"}
 					justifyContent={"space-between"}>
-					<HStack spacing={8} alignItems={"center"}>
+					<HStack spacing={8} direction={{base: "column", md:"row"}} justifyContent={"space-between"} w="full"alignItems={"center"}>
 						<Box>Daoist Therapy</Box>
 						<HStack
 							as={"nav"}

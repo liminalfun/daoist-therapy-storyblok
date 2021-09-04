@@ -6,6 +6,10 @@ import Feature from './Feature'
 import Text from './Text'
 import Media from './Media'
 import Youtube from './Youtube'
+import Btn from './Btn'
+import PageSection from './PageSection'
+import Faq from './Faq'
+import FaqItem from './FaqItem'
 import Page from './Page'
  
 // resolve Storyblok components to Next.js components
@@ -16,6 +20,10 @@ const Components = {
   'text': Text,
   'media': Media,
   'youtube': Youtube,
+  'button': Btn,
+  'page-section': PageSection,
+  'faq': Faq,
+  'faq-item': FaqItem,
   'page': Page,
 }
  
